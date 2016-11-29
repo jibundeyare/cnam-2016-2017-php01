@@ -17,3 +17,4 @@ $unAutreTableau = array(
 	$duTexte,
 	$encoreDuTexte,
 );
+
