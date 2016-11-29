@@ -25,3 +25,34 @@
 
 // affichez un saut de ligne html
 
+$tab1 = array(
+    123,
+    'toto',
+    true,
+);
+
+$tab2 = array(
+    100,
+    101,
+    102,
+);
+
+var_dump($tab1);
+
+var_dump($tab2);
+
+$resultat = $tab1[0] + 2;
+
+echo "résultat: $resultat";
+
+echo "<br />\n";
+
+$tab2[] = $tab1[1];
+$tab2[] = $tab1[2];
+
+var_dump($tab2);
+
+echo $tab2[0];
+
+echo "<br />\n";
+

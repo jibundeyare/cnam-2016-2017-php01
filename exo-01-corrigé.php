@@ -18,3 +18,19 @@
 
 // afficher la valeur de la variable `$résultat` en préfixant par "résultat : "
 
+$entier = 432;
+
+$virgule = 3.14;
+
+$resultat = null;
+
+$resultat = $entier + $virgule * $entier;
+
+var_dump($resultat);
+
+$resultat = $entier - $virgule / $entier;
+
+var_dump($resultat);
+
+$texte = "résultat: ";
+echo $texte . $resultat;

@@ -12,9 +12,9 @@ $unTableau[] = $duTexte;
 $unTableau[] = $encoreDuTexte;
 
 $unAutreTableau = array(
-	$unNombre,
-	$unAutreNombre,
-	$duTexte,
-	$encoreDuTexte,
+    $unNombre,
+    $unAutreNombre,
+    $duTexte,
+    $encoreDuTexte,
 );
 

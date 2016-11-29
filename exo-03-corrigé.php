@@ -10,3 +10,17 @@
 
 // ajoutez un saut de ligne html à la fin
 
+$texte = "lorem ipsum";
+
+if ($texte == "Toto") {
+    // affichage par concaténation
+    echo "Bonjour " . $texte;
+    echo "<br />\n";
+}
+
+if ($texte == "Toto") {
+    // affichage par interpolation
+    echo "Bonjour $texte";
+    echo "<br />\n";
+}
+

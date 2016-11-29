@@ -10,11 +10,11 @@ $condition2 = $nombre2 > 50;
 var_dump($condition2);
 
 if ($nombre1 > 50) {
-	echo "ce code est toujours exécuté";
-	echo "<br />\n";
+    echo "ce code est toujours exécuté";
+    echo "<br />\n";
 }
 
 if ($nombre2 > 50) {
-	echo "ce code n'est jamais exécuté";
-	echo "<br />\n";
+    echo "ce code n'est jamais exécuté";
+    echo "<br />\n";
 }
