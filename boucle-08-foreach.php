@@ -1,18 +1,8 @@
 <?php
 
-// déclaration d'un tableau de 3 éléments
-// avec des clés alphanumériques
-$tableau = array(
-	'foo' => 'Lorem ipsum dolor sit amet',
-	'bar' => 'consectetur adipiscing elit',
-	'baz' => 'Praesent ligula lectus',
-);
+$tableau = array(1, 42, 123);
 
-foreach ($tableau as $cle => $valeur) {
-	// affichage avec interpolation
-	// des paires clé / valeur
-	echo "$cle => $valeur<br />\n";
-
-	// même chose mais avec concaténation
-	//echo $cle . " => " . $valeur . "<br />\n";
+foreach ($tableau as $valeur) {
+    echo $valeur . "<br />\n";
 }
+
