@@ -15,6 +15,6 @@ $t[$i] = 'toto';
 
 for ($i = 0; $i < count($t); $i++) {
     if ($t[$i] == 'toto') {
-        echo '\'toto\' se trouve à l\'index ' . $i . "\n";
+        echo '\'toto\' se trouve à l\'index ' . $i . "<br />\n";
     }
 }
