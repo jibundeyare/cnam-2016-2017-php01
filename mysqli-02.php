@@ -9,7 +9,7 @@ if (!$link) {
 }
 
 // une requête sql en lecture
-$sql = 'SHOW DATABASES';
+$sql = 'SHOW TABLES';
 
 // exécution de la requête sql
 // et récupération du résultat dans la variable $result
@@ -24,8 +24,10 @@ if (!$result) {
 }
 
 // on affiche le nombre de résultats de la requête
-echo 'nombre de tables : ' . $result->num_rows . "<br />\n";
+echo 'nombre de résultats : ' . $result->num_rows . "<br />\n";
 
 while ($row = mysqli_fetch_assoc($result)) {
-	echo htmlentities($row['Database']) . "<br />\n";
+	foreach ($row as $key => $value) {
+		echo htmlentities($key) . ' : ' . htmlentities($value) . "<br />\n";
+	}
 }
