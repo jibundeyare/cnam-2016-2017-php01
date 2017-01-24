@@ -6,13 +6,16 @@
 $link = mysqli_connect('localhost', 'website', 'website', 'website');
 
 if (!$link) {
-	echo mysqli_error_connect() . "<br />\n";
+	echo mysqli_connect_error() . "<br />\n";
 	exit();
 }
 
 // une requête de sélection d'un seul utilisateur à partir de son id
 $id = 1;
 $sql = 'SELECT * FROM user WHERE id = ' . mysqli_real_escape_string($link, $id);
+
+var_dump($sql);
+exit();
 
 $result = mysqli_query($link, $sql);
 

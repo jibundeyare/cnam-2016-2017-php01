@@ -3,7 +3,7 @@
 $link = mysqli_connect('localhost', 'website', 'website', 'website');
 
 if (!$link) {
-	echo mysqli_error_connect() . "<br />\n";
+	echo mysqli_connect_error() . "<br />\n";
 	exit();
 }
 
@@ -21,6 +21,8 @@ if (!$result) {
 echo 'résultats : ' . $result->num_rows . "<br />\n";
 
 while ($row = mysqli_fetch_assoc($result)) {
+	// var_dump($row);
+
 	echo 'id : ' . $row['id'] . "<br />\n";
 	echo 'nom : ' . $row['nom'] . "<br />\n";
 	echo 'prenom : ' . $row['prenom'] . "<br />\n";

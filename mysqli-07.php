@@ -3,7 +3,7 @@
 $link = mysqli_connect('localhost', 'website', 'website', 'website');
 
 if (!$link) {
-	echo mysqli_error_connect() . "<br />\n";
+	echo mysqli_connect_error() . "<br />\n";
 	exit();
 }
 
