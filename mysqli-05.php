@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect('localhost', 'root', '', 'BdDragon');
+$link = mysqli_connect('localhost', 'website', 'website', 'website');
 
 if (!$link) {
 	echo mysqli_connect_error() . "<br />\n";

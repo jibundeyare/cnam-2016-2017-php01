@@ -6,7 +6,9 @@ if (!$link) {
 	echo mysqli_connect_error() . "<br />\n";
 	exit();
 }
+
 // requête d'insertion de 3 utilisateurs
+// sha1() est une fonction de hashage (à utiliser pour les mots de passe)
 $sql = "
 INSERT INTO user
 (nom, prenom, email, password_hash)

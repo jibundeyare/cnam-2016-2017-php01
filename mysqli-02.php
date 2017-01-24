@@ -27,6 +27,7 @@ $result = mysqli_query($link, $sql);
 if (!$result) {
 	// une erreur s'est présenté
 	echo mysqli_error($link) . '<br />';
+  exit();
 }
 
 echo 'la table a été créée<br />';
