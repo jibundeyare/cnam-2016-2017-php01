@@ -22,12 +22,12 @@ if (!$result) {
 
 echo 'résultats : ' . $result->num_rows . "<br />\n";
 
-while ($row = mysqli_fetch_object($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
 	// var_dump($row);
 
-	echo 'id : ' . $row->id . "<br />\n";
-	echo 'nom : ' . $row->nom . "<br />\n";
-	echo 'prenom : ' . $row->prenom . "<br />\n";
-	echo 'email : ' . $row->email . "<br />\n";
-	echo 'password_hash : ' . $row->password_hash . "<br />\n";
+	echo 'id : ' . $row['id'] . "<br />\n";
+	echo 'nom : ' . $row['nom'] . "<br />\n";
+	echo 'prenom : ' . $row['prenom'] . "<br />\n";
+	echo 'email : ' . $row['email'] . "<br />\n";
+	echo 'password_hash : ' . $row['password_hash'] . "<br />\n";
 }

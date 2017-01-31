@@ -9,25 +9,20 @@ if (!$link) {
 
 mysqli_set_charset($link, 'utf8');
 
-// une requête de sélection d'un seul utilisateur à partir de son id
-$id = 1;
-$sql = 'SELECT * FROM user WHERE id = ' . mysqli_real_escape_string($link, $id);
+// une requête de sélection de tous les utilisateurs
+$sql = 'SELECT * FROM user';
 
 $result = mysqli_query($link, $sql);
 
 if (!$result) {
-	echo mysqli_error($link);
+	echo mysqli_error($link) . "<br />\n";
 	exit();
 }
 
-echo 'résultats : ' . $result->num_rows . "<br />\n";
+echo 'nombre de résultats : ' . $result->num_rows . "<br />\n";
 
 while ($row = mysqli_fetch_assoc($result)) {
-	// var_dump($row);
-
-	echo 'id : ' . $row['id'] . "<br />\n";
-	echo 'nom : ' . $row['nom'] . "<br />\n";
-	echo 'prenom : ' . $row['prenom'] . "<br />\n";
-	echo 'email : ' . $row['email'] . "<br />\n";
-	echo 'password_hash : ' . $row['password_hash'] . "<br />\n";
+	foreach ($row as $key => $value) {
+		echo htmlentities($key) . ' : ' . htmlentities($value) . "<br />\n";
+	}
 }

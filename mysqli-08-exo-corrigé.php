@@ -1,8 +1,9 @@
 <?php
 
-// adaptez le code pour que la requête sql renvoit tous les utilisateurs
+// adaptez ce script pour qu'il fonctionne avec la base de donnée DbDragon
+// qui a été créée dans l'environnement wamp
 
-$link = mysqli_connect('localhost', 'website', 'website', 'website');
+$link = mysqli_connect('localhost', 'root', '', 'DbDragon');
 
 if (!$link) {
 	echo mysqli_connect_error() . "<br />\n";
@@ -12,9 +13,8 @@ if (!$link) {
 mysqli_set_charset($link, 'utf8');
 
 // une requête de sélection d'un seul utilisateur à partir de son id
-$sql = sprintf(
-	"SELECT * FROM user"
-);
+$dragon = 'bolong';
+$sql = "SELECT * FROM user WHERE dragon = '" . mysqli_real_escape_string($link, $dragon) . "'";
 
 $result = mysqli_query($link, $sql);
 
@@ -28,9 +28,9 @@ echo 'résultats : ' . $result->num_rows . "<br />\n";
 while ($row = mysqli_fetch_object($result)) {
 	// var_dump($row);
 
-	echo 'id : ' . $row->id . "<br />\n";
-	echo 'nom : ' . $row->nom . "<br />\n";
-	echo 'prenom : ' . $row->prenom . "<br />\n";
-	echo 'email : ' . $row->email . "<br />\n";
-	echo 'password_hash : ' . $row->password_hash . "<br />\n";
+	echo 'dragon : ' . $row->dragon . "<br />\n";
+	echo 'sexe : ' . $row->sexe . "<br />\n";
+	echo 'longueur : ' . $row->longueur . "<br />\n";
+	echo 'ecailles : ' . $row->ecailles . "<br />\n";
+	echo 'crachefeu : ' . $row->crachefeu . "<br />\n";
 }

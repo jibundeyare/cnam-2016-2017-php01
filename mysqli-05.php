@@ -9,8 +9,16 @@ if (!$link) {
 
 mysqli_set_charset($link, 'utf8');
 
-// une requête de sélection de tous les utilisateurs
-$sql = 'SELECT * FROM user';
+// requête d'insertion de 3 utilisateurs
+// sha1() est une fonction de hashage (à utiliser pour les mots de passe)
+$sql = "
+INSERT INTO user
+(nom, prenom, email, password_hash)
+VALUES
+('Bar', 'Foo', 'foo.bar@cnam.net', '" . sha1('123') . "'),
+('Lorem', 'Ipsum', 'lorem.ipsum@cnam.net', '" . sha1('123') . "'),
+('Baz', 'Toto', 'toto.baz@cnam.net', '" . sha1('123') . "')
+";
 
 $result = mysqli_query($link, $sql);
 
@@ -19,10 +27,8 @@ if (!$result) {
 	exit();
 }
 
-echo 'nombre de résultats : ' . $result->num_rows . "<br />\n";
+echo "les données ont été insérées<br />\n";
 
-while ($row = mysqli_fetch_assoc($result)) {
-	foreach ($row as $key => $value) {
-		echo htmlentities($key) . ' : ' . htmlentities($value) . "<br />\n";
-	}
-}
+// affichage du dernier id inséré (celui de Baz Toto)
+echo 'id du dernier élément inséré : ' . mysqli_insert_id($link) . "<br />\n";
+

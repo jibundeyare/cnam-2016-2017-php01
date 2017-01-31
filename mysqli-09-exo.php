@@ -1,7 +1,6 @@
 <?php
 
-// adaptez ce script pour qu'il fonctionne avec la base de donnée DbDragon
-// qui a été créée dans l'environnement wamp
+// adaptez le code pour que la requête sql renvoit tous les utilisateurs
 
 $link = mysqli_connect('localhost', 'website', 'website', 'website');
 
@@ -14,10 +13,10 @@ mysqli_set_charset($link, 'utf8');
 
 // une requête de sélection d'un seul utilisateur à partir de son id
 $id = 1;
-$sql = 'SELECT * FROM user WHERE id = ' . mysqli_real_escape_string($link, $id);
-
-var_dump($sql);
-exit();
+$sql = sprintf(
+	"SELECT * FROM user WHERE id = %d",
+	mysqli_real_escape_string($link, $id)
+);
 
 $result = mysqli_query($link, $sql);
 
