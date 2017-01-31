@@ -7,6 +7,8 @@ if (!$link) {
 	exit();
 }
 
+mysqli_set_charset($link, 'utf8');
+
 // requête de création de la base de données
 $sql = '
 CREATE TABLE IF NOT EXISTS user (

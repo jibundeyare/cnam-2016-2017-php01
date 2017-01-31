@@ -7,6 +7,8 @@ if (!$link) {
 	exit();
 }
 
+mysqli_set_charset($link, 'utf8');
+
 // requête de la liste des base de données
 $sql = 'SHOW TABLES';
 

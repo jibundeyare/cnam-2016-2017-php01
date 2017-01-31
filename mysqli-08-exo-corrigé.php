@@ -9,6 +9,8 @@ if (!$link) {
 	exit();
 }
 
+mysqli_set_charset($link, 'utf8');
+
 // une requête de sélection d'un seul utilisateur à partir de son id
 $sql = sprintf(
 	"SELECT * FROM user"

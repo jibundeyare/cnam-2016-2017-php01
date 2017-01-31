@@ -1,11 +1,15 @@
 <?php
 
+// @todo communiquer sur insert_id
+
 $link = mysqli_connect('localhost', 'website', 'website', 'website');
 
 if (!$link) {
 	echo mysqli_connect_error() . "<br />\n";
 	exit();
 }
+
+mysqli_set_charset($link, 'utf8');
 
 // requête d'insertion de 3 utilisateurs
 // sha1() est une fonction de hashage (à utiliser pour les mots de passe)
@@ -26,3 +30,7 @@ if (!$result) {
 }
 
 echo "les données ont été insérées<br />\n";
+
+// affichage du dernier id inséré
+echo 'id du dernier élément inséré : ' . mysqli_insert_id($link) . "<br />\n";
+

@@ -7,6 +7,8 @@ if (!$link) {
 	exit();
 }
 
+mysqli_set_charset($link, 'utf8');
+
 // une requête de sélection de tous les utilisateurs
 $sql = 'SELECT * FROM user';
 

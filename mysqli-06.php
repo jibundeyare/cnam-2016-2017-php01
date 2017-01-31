@@ -7,6 +7,8 @@ if (!$link) {
 	exit();
 }
 
+mysqli_set_charset($link, 'utf8');
+
 // une requête de sélection d'un seul utilisateur à partir de son id
 $id = 1;
 $sql = 'SELECT * FROM user WHERE id = ' . mysqli_real_escape_string($link, $id);
