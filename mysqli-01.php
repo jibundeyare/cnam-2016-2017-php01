@@ -1,7 +1,5 @@
 <?php
 
-// @todo communiquer sur mysqli_set_charset()
-
 // connexion à la base données
 // adresse du serveur, utilisateur, mot de passe, base de données
 $link = mysqli_connect('localhost', 'website', 'website', 'website');

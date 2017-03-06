@@ -11,15 +11,18 @@ var_dump($_POST);
   <body>
 
     <form action="<?php echo basename(__FILE__); ?>" method="post" enctype="multipart/form-data">
-    	<div>
-    		<input type="text" id="titre" name="titre" value="" placeholder="titre" />
-    	</div>
-    	<div>
-    		<textarea id="texte" name="texte" placeholder="texte"></textarea>
-    	</div>
-    	<div>
-    		<input type="submit" value="valider" />
-    	</div>
+      <div>
+        <input type="text" id="article" name="article" value="" placeholder="article" />
+      </div>
+      <div>
+        <input type="text" id="prix" name="prix" value="" placeholder="prix" />
+      </div>
+      <div>
+        <textarea id="description" name="description" placeholder="description"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="valider" />
+      </div>
     </form>
 
   </body>
